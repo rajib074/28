@@ -12,16 +12,19 @@ function updateCaseNumber(isIncreasing){
     const caseTotal = document.getElementById('case-total')
     caseTotal.innerText = caseNumber * 59; 
 }
+// phone increase decrase events 
+document.getElementById('phone-plus').addEventListener('click', function(){
+    
+})
+
+
+// handle case increase decrase events 
 document.getElementById('case-pius').addEventListener('click',function(){ 
     updateCaseNumber(true);
     
-    /*  const caseInput = document.getElementById('case-number')
-    const caseNumber = caseInput.value;
-    caseInput.value = parseInt(caseNumber) + 1;  */    
+   
 })
 document.getElementById('case-minus').addEventListener('click',function(){ 
     updateCaseNumber(false);    
-    /*const caseInput = document.getElementById('case-number')
-    const caseNumber = caseInput.value; 
-    caseInput.value = parseInt(caseNumber) - 1;*/    
+      
 })
