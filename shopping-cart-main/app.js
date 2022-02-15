@@ -1,12 +1,16 @@
 function updateCaseNumber(isIncreasing){
     const caseInput = document.getElementById('case-number')
-    const caseNumber = caseInput.value;
+    let caseNumber = caseInput.value;
     if(isIncreasing){
-        caseInput.value = parseInt(caseNumber) + 1;
+        caseNumber = parseInt(caseNumber) + 1;
     }
     else if(caseNumber > 0) {
-        caseInput.value = parseInt(caseNumber) - 1;
-    }    
+        caseNumber = parseInt(caseNumber) - 1;
+    }  
+    caseInput.value = caseNumber;  
+    // update Case Total 
+    const caseTotal = document.getElementById('case-total')
+    caseTotal.innerText = caseNumber * 59; 
 }
 document.getElementById('case-pius').addEventListener('click',function(){ 
     updateCaseNumber(true);
