@@ -11,6 +11,26 @@ function updateProductNumber(product,price,isIncreasing){
     // update Total 
     const productTotal = document.getElementById(product+'-total')
     productTotal.innerText = productNumber * price; 
+    // calculate Total call kora hoise 
+    calculateTotal();
+}
+function getInputValue(product){
+    const phoneInput = document.getElementById(product + '-number');
+    const productNumber = parseInt(phoneInput.value);
+    return productNumber;
+}
+
+function calculateTotal(){    
+    const phoneTotal = getInputValue('phone') * 1219;
+    const caseTotal = getInputValue('case') * 59;
+    const subTotal = phoneTotal + caseTotal;
+    const tax = subTotal / 10;
+    const totalPrice = subTotal + tax;
+    // update on the html 
+    document.getElementById('sub-total').innerText = subTotal;
+    document.getElementById('tax-amount').innerText = tax;
+    document.getElementById('total-price').innerText = totalPrice;
+
 }
 // phone increase decrase events 
 document.getElementById('phone-plus').addEventListener('click', function(){
